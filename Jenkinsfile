@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "Auto Trigger"
+                    echo "Webhook Trigger"
                     node --version
                     npm --version
                     npm ci
