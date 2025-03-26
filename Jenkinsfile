@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "Auto Triger"
+                    echo "Auto Trigger"
                     node --version
                     npm --version
                     npm ci
