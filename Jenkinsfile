@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    ls -la
+                    echo "Auto Trigger"
                     node --version
                     npm --version
                     npm ci
