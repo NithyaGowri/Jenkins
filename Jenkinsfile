@@ -6,8 +6,10 @@ pipeline {
             agent
             {
                 docker{
+                    cleanWs()
                     image 'amazon/aws-cli'
                     args "--entrypoint=''"
+                    reuseNode true
                 }
             }
             environment
