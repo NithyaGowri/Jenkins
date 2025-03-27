@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'aws --version"
+                sh "aws --version"
             }
 
         }
