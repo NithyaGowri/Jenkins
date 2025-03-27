@@ -20,11 +20,16 @@ pipeline {
                 '''
             }
         }
+        stage('Seeking Approval') {
+            steps {
+                input cancel: 'No, Abort', message: 'Are you Sure to Proceed Testing Stage', ok: 'Yes, Proceed with Testing'
+            }
+        }
 
         stage('Tests')
         {
             parallel{
-                stage('Test') {
+                stage('Unit Test') {
                 agent {
                     docker {
                         image 'node:18-alpine'
@@ -39,7 +44,7 @@ pipeline {
                     '''
                 }
             }
-            stage('E2E') {
+            stage('E2E Testing') {
                 agent {
                     docker {
                         image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
