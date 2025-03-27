@@ -6,7 +6,7 @@ pipeline {
             agent
             {
                 docker{
-                    cleanWs()
+                    
                     image 'amazon/aws-cli'
                     args "--entrypoint=''"
                     reuseNode true
@@ -17,6 +17,7 @@ pipeline {
                 AWS_S3 = 's3-for-jenkins-inte'
             }
             steps{
+                cleanWs()
                 withCredentials([usernamePassword(credentialsId: 'awsaccesskey', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
                     sh '''
                     aws --version
