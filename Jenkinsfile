@@ -22,7 +22,9 @@ pipeline {
         }
         stage('Seeking Approval') {
             steps {
+                timeout(time: 30, unit: 'SECONDS') {
                 input cancel: 'No, Abort', message: 'Are you Sure to Proceed Testing Stage', ok: 'Yes, Proceed with Testing'
+                }
             }
         }
 
