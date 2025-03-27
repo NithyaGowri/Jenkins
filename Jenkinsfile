@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                cleanWs()
+                
                 sh '''
                     npm ci
                     npm run build
@@ -49,6 +49,13 @@ pipeline {
         
         
         
+    }
+    post
+    {
+        always
+        {
+            cleanWs()
+        }
     }
 
     
