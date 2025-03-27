@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "Webhook Trigger"
+                    echo "Poll SCM Trigger"
                     node --version
                     npm --version
                     npm ci
